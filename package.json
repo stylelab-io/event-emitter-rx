@@ -1,20 +1,28 @@
 {
-  "name": "eventemitterrx",
-  "version": "0.0.1",
-  "description": "EventEmitter based on RxJS",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/stylelounge/eventemitterrx.git"
-  },
-  "keywords": [
-    "EventEmitter",
-    "RxJS"
-  ],
-  "author": "Jens Krause",
-  "license": "MIT",
-  "homepage": "https://bitbucket.org/stylelounge/eventemitterrx#readme"
+    "name": "eventemitterrx",
+    "version": "0.0.1",
+    "description": "EventEmitter based on RxJS",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "./node_modules/.bin/tsc --module commonjs src/EventEmitter.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@bitbucket.org/stylelounge/eventemitterrx.git"
+    },
+    "keywords": [
+        "EventEmitter",
+        "RxJS"
+    ],
+    "author": "Jens Krause",
+    "license": "MIT",
+    "homepage": "https://bitbucket.org/stylelounge/eventemitterrx#readme",
+    "dependencies": {
+        "rx": "^3.1.0"
+    },
+    "devDependencies": {
+        "tsd": "^0.6.3",
+        "typescript": "^1.5.3"
+    }
 }
