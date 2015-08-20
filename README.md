@@ -18,7 +18,7 @@ Coming soon...
 Clone project:
 
 ```bash
-$ git clone https://github.com/sectore/mithrilify.git && cd $_
+$ git clone git@bitbucket.org:stylelounge/eventemitterrx.git && cd $_
 ```
 
 Install dependencies (only once):
