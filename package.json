@@ -40,5 +40,5 @@
     "dependencies": {
       "rx": "npm:rx@^3.1.0"
     }
-  },
+  }
 }
