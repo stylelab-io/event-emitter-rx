@@ -1,13 +1,13 @@
 {
-    "name": "eventemitterrx",
+    "name": "eventemitter-rx",
     "version": "0.0.1",
     "description": "EventEmitter based on RxJS",
-    "main": "dist/index.js",
+    "main": "dist/EventEmitterRx.js",
     "scripts": {
         "start": "npm run ts",
-        "ts": "./node_modules/.bin/tsc --module commonjs --outDir dist/ src/EventEmitter.ts",
-        "tsTest": "./node_modules/.bin/tsc --module commonjs test/EventEmitter.spec.ts",
-        "mocha": "./node_modules/.bin/mocha test/EventEmitter.spec.js",
+        "ts": "./node_modules/.bin/tsc --module commonjs --outDir dist/ src/EventEmitterRx.ts",
+        "tsTest": "./node_modules/.bin/tsc --module commonjs test/EventEmitterRx.spec.ts",
+        "mocha": "./node_modules/.bin/mocha test/EventEmitterRx.spec.js",
         "test": "npm run ts && npm run tsTest && npm run mocha"
     },
     "repository": {

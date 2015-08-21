@@ -1,16 +1,16 @@
 /// <reference path="../typings/tsd.d.ts" />
 
 import * as Rx from 'rx';
-import EventEmitter from '../src/EventEmitter';
+import EventEmitterRx from '../src/EventEmitterRx';
 import * as chai from 'chai';
 import * as sinon from 'sinon';
 
-describe('EventEmitter', () => {
+describe('EventEmitterRx', () => {
 
-    var emitter: EventEmitter;
+    var emitter: EventEmitterRx;
 
     beforeEach(() => {
-        emitter = new EventEmitter();
+        emitter = new EventEmitterRx();
     });
 
     it('subscribes an Observer', () => {

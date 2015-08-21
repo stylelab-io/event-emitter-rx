@@ -7,7 +7,7 @@ import * as Rx from 'rx';
  * Based on "How do I create a custom event emitter?"
  * @see https://github.com/Reactive-Extensions/RxJS/blob/master/doc/howdoi/eventemitter.md
  */
-class EventEmitter {
+class EventEmitterRx {
 
     /**
      * Hash map of subjects
@@ -74,4 +74,4 @@ class EventEmitter {
     }
 }
 
-export default EventEmitter;
+export default EventEmitterRx;

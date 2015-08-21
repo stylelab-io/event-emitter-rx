@@ -5,8 +5,8 @@ var Rx = require('rx');
  * Based on "How do I create a custom event emitter?"
  * @see https://github.com/Reactive-Extensions/RxJS/blob/master/doc/howdoi/eventemitter.md
  */
-var EventEmitter = (function () {
-    function EventEmitter() {
+var EventEmitterRx = (function () {
+    function EventEmitterRx() {
         /**
          * Hash map of subjects
          * @type {{Rx.Subject}}
@@ -18,7 +18,7 @@ var EventEmitter = (function () {
      * @param name {string} Name of an event
      * @param data {Object} Event data
      */
-    EventEmitter.prototype.next = function (name, data) {
+    EventEmitterRx.prototype.next = function (name, data) {
         if (data === void 0) { data = {}; }
         this.subjects[name] || (this.subjects[name] = new Rx.Subject());
         this.subjects[name].onNext(data);
@@ -29,7 +29,7 @@ var EventEmitter = (function () {
      * @param handler {any} Callback of the listener (subscriber)
      * @returns {Rx.IDisposable}
      */
-    EventEmitter.prototype.subscribe = function (name, handler) {
+    EventEmitterRx.prototype.subscribe = function (name, handler) {
         this.subjects[name] || (this.subjects[name] = new Rx.Subject());
         return this.subjects[name].subscribe(handler);
     };
@@ -38,14 +38,14 @@ var EventEmitter = (function () {
     * @param name {string} Name of an event
     * @returns {boolean} Returns true if the Subject has observers, else false.
     */
-    EventEmitter.prototype.hasObserver = function (name) {
+    EventEmitterRx.prototype.hasObserver = function (name) {
         return this.subjects[name] !== undefined && this.subjects[name].hasObservers();
     };
     /**
      * Cleans up a Subject and remove all its observers.
      * Also it removes the subject from subject map.
      */
-    EventEmitter.prototype.dispose = function (name) {
+    EventEmitterRx.prototype.dispose = function (name) {
         if (this.subjects[name]) {
             this.subjects[name].dispose();
             delete this.subjects[name];
@@ -54,7 +54,7 @@ var EventEmitter = (function () {
     /**
      * Clean up all Observers and clean up map of Subjects
      */
-    EventEmitter.prototype.disposeAll = function () {
+    EventEmitterRx.prototype.disposeAll = function () {
         var subjects = this.subjects;
         var hasOwnProp = {}.hasOwnProperty;
         for (var prop in subjects) {
@@ -64,6 +64,6 @@ var EventEmitter = (function () {
         }
         this.subjects = {};
     };
-    return EventEmitter;
+    return EventEmitterRx;
 })();
-exports["default"] = EventEmitter;
+exports["default"] = EventEmitterRx;
