@@ -22,13 +22,13 @@ class EventEmitter {
      * @param name {string} Name of an event
      * @param data {Object} Event data
      */
-    next(name:string, data:Object) {
+    next(name:string, data:Object = {}) {
         this.subjects[name] || (this.subjects[name] = new Rx.Subject());
         this.subjects[name].onNext(data);
     }
 
     /**
-     * Subscribes a listener to an event.
+     * Subscribes a Observer (listener) to an event.
      * @param name {string} Name of an event
      * @param handler {any} Callback of the listener (subscriber)
      * @returns {Rx.IDisposable}
@@ -39,16 +39,17 @@ class EventEmitter {
     }
 
     /**
-    * Indicates whether the subject has observers subscribed to it.
+    * Indicates whether a Subject has Observers subscribed to it.
+    * @param name {string} Name of an event
     * @returns {boolean} Returns true if the Subject has observers, else false.
     */
-    hasObservers():boolean{
-        return this.subjects[name] && this.subjects[name].hasObservers();
+    hasObserver(name:string):boolean{
+        return this.subjects[name] !== undefined && this.subjects[name].hasObservers();
     }
 
     /**
-     * Clean up a certain subscriber from a subject
-     * and removes the subject from subject map
+     * Cleans up a Subject and remove all its observers.
+     * Also it removes the subject from subject map.
      */
     dispose(name:string) {
         if (this.subjects[name]) {
@@ -58,8 +59,7 @@ class EventEmitter {
     }
 
     /**
-     * Clean up all subscribers from subjects
-     * and removes all subjects form subject map
+     * Clean up all Observers and clean up map of Subjects
      */
     disposeAll() {
         var subjects = this.subjects;
@@ -74,10 +74,4 @@ class EventEmitter {
     }
 }
 
-/**
- * Instance of EventEmitter to provide a Singleton
- * @type {EventEmitter}
- */
-var emitter: EventEmitter = new EventEmitter();
-
-export default emitter;
+export default EventEmitter;
