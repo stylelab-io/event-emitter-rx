@@ -48,6 +48,8 @@ observer.dispose();
 
 ## Test
 
+![Running tests](/wiki/screenshot_test.png)
+
 Clone project:
 
 ```bash
