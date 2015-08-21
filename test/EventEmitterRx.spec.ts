@@ -2,7 +2,7 @@
 
 import * as Rx from 'rx';
 import EventEmitterRx from '../src/EventEmitterRx';
-import * as chai from 'chai';
+import {expect} from 'chai';
 import * as sinon from 'sinon';
 
 describe('EventEmitterRx', () => {
@@ -18,17 +18,17 @@ describe('EventEmitterRx', () => {
         const EVENT:string = 'myEvent';
         var result:Rx.IDisposable = emitter.subscribe(EVENT, callback);
         emitter.next(EVENT);
-        chai.expect(callback.calledOnce).to.be.ok;
+        expect(callback.calledOnce).to.be.ok;
     });
 
     it('has no Observers by default', () => {
-        chai.expect(emitter.hasObserver('anyEvent')).to.be.false;
+        expect(emitter.hasObserver('anyEvent')).to.be.false;
     });
 
     it('has Observers', () => {
         const EVENT:string = 'myEvent';
         var result:Rx.IDisposable = emitter.subscribe(EVENT, sinon.spy());
-        chai.expect(emitter.hasObserver(EVENT)).to.be.ok;
+        expect(emitter.hasObserver(EVENT)).to.be.ok;
     });
 
     it('calls the Observer with data', () => {
@@ -37,7 +37,7 @@ describe('EventEmitterRx', () => {
         const DATA: string = 'myData';
         var result:Rx.IDisposable = emitter.subscribe(EVENT, callback);
         emitter.next(EVENT, DATA);
-        chai.expect(callback.calledWith(DATA)).to.be.ok;
+        expect(callback.calledWith(DATA)).to.be.ok;
     });
 
     it('unsubscribes an Observer', () => {
@@ -51,7 +51,7 @@ describe('EventEmitterRx', () => {
         // second call
         emitter.next(EVENT);
         // callback should be called only once
-        chai.expect(callback.callCount).to.be.equal(1);
+        expect(callback.callCount).to.be.equal(1);
     });
 
     it('clean up a Subject', () => {
@@ -59,11 +59,11 @@ describe('EventEmitterRx', () => {
         const EVENT:string = 'myEvent';
         var resultA:Rx.IDisposable = emitter.subscribe(EVENT, callback);
         // observers has to be there
-        chai.expect(emitter.hasObserver(EVENT)).to.be.ok;
+        expect(emitter.hasObserver(EVENT)).to.be.ok;
         // dispose all
         emitter.dispose(EVENT);
         // no observer has to be there now
-        chai.expect(emitter.hasObserver(EVENT)).to.be.false;
+        expect(emitter.hasObserver(EVENT)).to.be.false;
     });
 
     it('clean up all Subjects and its Observers', () => {
@@ -73,13 +73,13 @@ describe('EventEmitterRx', () => {
         var resultA:Rx.IDisposable = emitter.subscribe(EVENT_A, callback);
         var resultB:Rx.IDisposable = emitter.subscribe(EVENT_B, callback);
         // observers has to be there
-        chai.expect(emitter.hasObserver(EVENT_A)).to.be.ok;
-        chai.expect(emitter.hasObserver(EVENT_B)).to.be.ok;
+        expect(emitter.hasObserver(EVENT_A)).to.be.ok;
+        expect(emitter.hasObserver(EVENT_B)).to.be.ok;
         // dispose all
         emitter.disposeAll()
         // no observer has to be there now
-        chai.expect(emitter.hasObserver(EVENT_A)).to.be.false;
-        chai.expect(emitter.hasObserver(EVENT_B)).to.be.false;
+        expect(emitter.hasObserver(EVENT_A)).to.be.false;
+        expect(emitter.hasObserver(EVENT_B)).to.be.false;
     });
 
 });
