@@ -6,7 +6,9 @@
     "scripts": {
         "start": "npm run ts",
         "ts": "./node_modules/.bin/tsc --module commonjs --outDir dist/ src/EventEmitter.ts",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "tsTest": "./node_modules/.bin/tsc --module commonjs test/EventEmitter.spec.ts",
+        "mocha": "./node_modules/.bin/mocha test/EventEmitter.spec.js",
+        "test": "npm run ts && npm run tsTest && npm run mocha"
     },
     "repository": {
         "type": "git",
@@ -23,6 +25,9 @@
         "rx": "^3.1.0"
     },
     "devDependencies": {
+        "chai": "^3.2.0",
+        "mocha": "^2.2.5",
+        "sinon": "^1.16.1",
         "tsd": "^0.6.3",
         "typescript": "^1.5.3"
     }
