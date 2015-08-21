@@ -1,6 +1,6 @@
 # EventEmitterRx
 
-EventEmitter using Observable implementation of [RxJS](https://github.com/Reactive-Extensions/RxJS). It implements the [Specification for Observable](https://github.com/jhusain/observable-spec), too.
+EventEmitter using [RxJS](https://github.com/Reactive-Extensions/RxJS).
 
 ## Install
 
@@ -10,7 +10,40 @@ $ npm install --save-dev eventemitterrx
 
 ## Usage
 
-Coming soon...
+```typescript
+
+// import of EventEmitter
+import EventEmitter from 'EventEmitter';
+
+// create an instance of it
+const emitter:EventEmitter = new EventEmitter();
+
+// dispatching an event
+const EVENT:string = 'myEvent';
+emitter.next(EVENT);
+
+// dispatching an event with data
+const DATA: string = 'myData';
+emitter.next(EVENT, DATA);
+
+// subscribing to an event
+emitter.subscribe(EVENT, () => {
+    console.log('handle event');
+});
+
+// subscribing to an event and handling of its data
+emitter.subscribe(EVENT, (DATA) => {
+    console.log('event data', DATA);
+});
+
+// unsubscribing to an event
+var observer:Rx.IDisposable = emitter.subscribe(EVENT, () => {
+    console.log('handle event');
+});
+observer.dispose();
+
+
+```
 
 
 ## Test
