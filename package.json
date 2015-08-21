@@ -1,34 +1,44 @@
 {
-    "name": "eventemitter-rx",
-    "version": "0.0.1",
-    "description": "EventEmitter based on RxJS",
-    "main": "dist/EventEmitterRx.js",
-    "scripts": {
-        "start": "npm run ts",
-        "ts": "./node_modules/.bin/tsc --module commonjs --outDir dist/ src/EventEmitterRx.ts",
-        "tsTest": "./node_modules/.bin/tsc --module commonjs test/EventEmitterRx.spec.ts",
-        "mocha": "./node_modules/.bin/mocha test/EventEmitterRx.spec.js",
-        "test": "npm run ts && npm run tsTest && npm run mocha"
+  "name": "eventemitter-rx",
+  "version": "0.0.1",
+  "description": "EventEmitter based on RxJS",
+  "main": "dist/EventEmitterRx.js",
+  "scripts": {
+    "start": "npm run ts",
+    "ts": "./node_modules/.bin/tsc --module commonjs --outDir dist/ src/EventEmitterRx.ts",
+    "tsTest": "./node_modules/.bin/tsc --module commonjs test/EventEmitterRx.spec.ts",
+    "mocha": "./node_modules/.bin/mocha test/EventEmitterRx.spec.js",
+    "test": "npm run ts && npm run tsTest && npm run mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/stylelounge/eventemitterrx.git"
+  },
+  "keywords": [
+    "EventEmitter",
+    "RxJS"
+  ],
+  "author": "Jens Krause",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/stylelounge/eventemitterrx#readme",
+  "dependencies": {
+    "rx": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.16.1",
+    "tsd": "^0.6.3",
+    "typescript": "^1.5.3"
+  },
+  "jspm": {
+    "main": "eventemitter-rx",
+    "format": "commonjs",
+    "directories": {
+      "lib": "dist"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@bitbucket.org/stylelounge/eventemitterrx.git"
-    },
-    "keywords": [
-        "EventEmitter",
-        "RxJS"
-    ],
-    "author": "Jens Krause",
-    "license": "MIT",
-    "homepage": "https://bitbucket.org/stylelounge/eventemitterrx#readme",
     "dependencies": {
-        "rx": "^3.1.0"
-    },
-    "devDependencies": {
-        "chai": "^3.2.0",
-        "mocha": "^2.2.5",
-        "sinon": "^1.16.1",
-        "tsd": "^0.6.3",
-        "typescript": "^1.5.3"
+      "rx": "npm:rx@^3.1.0"
     }
+  },
 }
