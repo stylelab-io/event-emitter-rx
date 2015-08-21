@@ -4,8 +4,22 @@ EventEmitter using [RxJS](https://github.com/Reactive-Extensions/RxJS).
 
 ## Install
 
+### Source by npm
+
 ```bash
-$ npm install --save-dev eventemitterrx
+$ npm install --save-dev eventemitter-rx
+```
+
+### or by jspm
+
+```bash
+$ jspm install --save eventemitter-rx
+```
+
+### TSD files from our [stylelab-io/DefinitelyTyped](https://github.com/stylelab-io/DefinitelyTyped/tree/master/eventemitter-rx) repo
+
+```bash
+$ tsd install eventemitter-rx --save
 ```
 
 ## Usage
@@ -13,7 +27,7 @@ $ npm install --save-dev eventemitterrx
 ```typescript
 
 // import of EventEmitter
-import EventEmitter from 'EventEmitter';
+import EventEmitter from 'eventemitter-rx';
 
 // create an instance of it
 const emitter:EventEmitter = new EventEmitter();
