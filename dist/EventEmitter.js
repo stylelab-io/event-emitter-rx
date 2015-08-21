@@ -19,11 +19,12 @@ var EventEmitter = (function () {
      * @param data {Object} Event data
      */
     EventEmitter.prototype.next = function (name, data) {
+        if (data === void 0) { data = {}; }
         this.subjects[name] || (this.subjects[name] = new Rx.Subject());
         this.subjects[name].onNext(data);
     };
     /**
-     * Subscribes a listener to an event.
+     * Subscribes a Observer (listener) to an event.
      * @param name {string} Name of an event
      * @param handler {any} Callback of the listener (subscriber)
      * @returns {Rx.IDisposable}
@@ -33,15 +34,16 @@ var EventEmitter = (function () {
         return this.subjects[name].subscribe(handler);
     };
     /**
-    * Indicates whether the subject has observers subscribed to it.
+    * Indicates whether a Subject has Observers subscribed to it.
+    * @param name {string} Name of an event
     * @returns {boolean} Returns true if the Subject has observers, else false.
     */
-    EventEmitter.prototype.hasObservers = function () {
-        return this.subjects[name] && this.subjects[name].hasObservers();
+    EventEmitter.prototype.hasObserver = function (name) {
+        return this.subjects[name] !== undefined && this.subjects[name].hasObservers();
     };
     /**
-     * Clean up a certain subscriber from a subject
-     * and removes the subject from subject map
+     * Cleans up a Subject and remove all its observers.
+     * Also it removes the subject from subject map.
      */
     EventEmitter.prototype.dispose = function (name) {
         if (this.subjects[name]) {
@@ -50,8 +52,7 @@ var EventEmitter = (function () {
         }
     };
     /**
-     * Clean up all subscribers from subjects
-     * and removes all subjects form subject map
+     * Clean up all Observers and clean up map of Subjects
      */
     EventEmitter.prototype.disposeAll = function () {
         var subjects = this.subjects;
@@ -65,9 +66,4 @@ var EventEmitter = (function () {
     };
     return EventEmitter;
 })();
-/**
- * Instance of EventEmitter to provide a Singleton
- * @type {EventEmitter}
- */
-var emitter = new EventEmitter();
-exports["default"] = emitter;
+exports["default"] = EventEmitter;
