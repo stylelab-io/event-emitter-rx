@@ -1,22 +1,22 @@
 {
-    "version": "1.5.3",
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "declaration": false,
-        "noImplicitAny": false,
-        "removeComments": false,
-        "noLib": false,
-        "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "experimentalDecorators": true
-    },
-    "compileOnSave": false,
-    "filesGlob": [
-        "./src/**/*.ts",
-        "./test/**/*.ts",
-    ],
-    "files": [
-        "./src/index.ts"
-    ]
+  "version": "1.5.3",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "amd",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "noLib": false,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "experimentalDecorators": true
+  },
+  "compileOnSave": false,
+  "filesGlob": [
+    "./src/**/*.ts",
+    "./test/**/*.ts",
+  ],
+  "files": [
+    "./src/index.ts"
+  ]
 }

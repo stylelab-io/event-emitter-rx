@@ -33,7 +33,7 @@
   },
   "jspm": {
     "main": "eventemitter-rx",
-    "format": "commonjs",
+    "format": "amd",
     "directories": {
       "lib": "dist"
     },
