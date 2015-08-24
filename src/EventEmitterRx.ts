@@ -71,6 +71,5 @@ export default class EventEmitterRx {
         }
 
         this.subjects = {};
-        console.log('hello');
     }
 }

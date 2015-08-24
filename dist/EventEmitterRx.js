@@ -31,7 +31,6 @@ define(["require", "exports", 'rx'], function (require, exports, Rx) {
                 }
             }
             this.subjects = {};
-            console.log('hello');
         };
         return EventEmitterRx;
     })();
