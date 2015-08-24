@@ -1,4 +1,5 @@
 node_modules/
 typings/
-src/**/*.js
-test/**/*.js
+**/*.spec.js
+**/*.js
+EventEmitterRx.js

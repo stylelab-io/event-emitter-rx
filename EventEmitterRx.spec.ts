@@ -1,7 +1,7 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="./typings/tsd.d.ts" />
 
 import * as Rx from 'rx';
-import EventEmitterRx from '../src/EventEmitterRx';
+import EventEmitterRx from './EventEmitterRx';
 import {expect} from 'chai';
 import * as sinon from 'sinon';
 
