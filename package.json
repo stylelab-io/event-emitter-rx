@@ -1,6 +1,6 @@
 {
   "name": "eventemitter-rx",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "EventEmitter based on RxJS",
   "main": "EventEmitterRx.js",
   "scripts": {
