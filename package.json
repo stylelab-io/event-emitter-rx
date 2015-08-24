@@ -39,7 +39,7 @@
       "lib": "./"
     },
     "dependencies": {
-      "rx": "npm:rx@^3.1.0"
+      "rx": "rx@^3.1.0"
     }
   }
 }
