@@ -1,14 +1,15 @@
 {
   "name": "eventemitter-rx",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "EventEmitter based on RxJS",
-  "main": "dist/EventEmitterRx.js",
+  "main": "src/EventEmitterRx.js",
   "scripts": {
-    "start": "npm run ts",
-    "ts": "./node_modules/.bin/tsc --module commonjs --outDir dist/ src/EventEmitterRx.ts",
-    "tsTest": "./node_modules/.bin/tsc --module commonjs test/EventEmitterRx.spec.ts",
+    "start": "npm run tsAMD",
+    "tsAMD": "./node_modules/.bin/tsc --t ES5 --m amd --removeComments --outDir dist/ src/EventEmitterRx.ts",
+    "tsCommonJS": "./node_modules/.bin/tsc --t ES5 --m commonjs --outDir src/ src/EventEmitterRx.ts",
+    "tsTestCommonJS": "./node_modules/.bin/tsc --t ES5 --m commonjs test/EventEmitterRx.spec.ts",
     "mocha": "./node_modules/.bin/mocha test/EventEmitterRx.spec.js",
-    "test": "npm run ts && npm run tsTest && npm run mocha"
+    "test": "npm run tsCommonJS && npm run tsTestCommonJS && npm run mocha"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,7 @@
     "typescript": "^1.5.3"
   },
   "jspm": {
-    "main": "eventemitter-rx",
+    "main": "EventEmitterRx",
     "format": "amd",
     "directories": {
       "lib": "dist"
