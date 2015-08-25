@@ -34,7 +34,6 @@
   },
   "jspm": {
     "main": "EventEmitterRx",
-    "format": "commonjs",
     "directories": {
       "lib": "./"
     },
