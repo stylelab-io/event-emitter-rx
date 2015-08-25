@@ -28,8 +28,6 @@ $ tsd install eventemitter-rx --save
 $ npm run start
 ```
 
-Note: Because `[jspm](https://github.com/jspm/registry/wiki/Configuring-Packages-for-jspm#format)` does not support `commonjs` `EventEmitterRx.ts` is compiled to `AMD`.
-
 ## Usage
 
 ```typescript
@@ -89,8 +87,6 @@ Run tests:
 ```bash
 $ npm test
 ```
-
-Note: Because `mocha` runs with `commonjs` `EventEmitterRx.ts` is compiled to this format before (for tests only).
 
 ## Release History
 
