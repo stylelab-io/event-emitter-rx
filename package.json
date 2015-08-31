@@ -41,7 +41,8 @@
       "rx": "^3.1.0"
     },
     "ignore": [
-      "wiki"
+      "wiki",
+      "wallaby.js"
     ]
   }
 }
