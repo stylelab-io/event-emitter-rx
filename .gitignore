@@ -4,3 +4,4 @@ typings/
 **/*.js
 !wallaby.js
 !EventEmitterRx.js
+.idea
