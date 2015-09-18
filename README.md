@@ -16,7 +16,7 @@ $ npm install --save-dev eventemitter-rx
 $ jspm install --save eventemitter-rx
 ```
 
-### TSD files from our [stylelab-io/DefinitelyTyped](https://github.com/stylelab-io/DefinitelyTyped/tree/master/eventemitter-rx) repo
+### TSD files are available at our [stylelab-io/DefinitelyTyped](https://github.com/stylelab-io/DefinitelyTyped/tree/master/eventemitter-rx) fork
 
 ```bash
 $ tsd install eventemitter-rx --save
@@ -62,7 +62,6 @@ var observer:Rx.IDisposable = emitter.subscribe(EVENT, () => {
 });
 observer.dispose();
 
-
 ```
 
 
@@ -73,7 +72,7 @@ observer.dispose();
 Clone project:
 
 ```bash
-$ git clone git@bitbucket.org:stylelounge/eventemitterrx.git && cd $_
+$ git clone https://github.com/stylelab-io/event-emitter-rx.git && cd $_
 ```
 
 Install dependencies (only once):
