@@ -2,6 +2,13 @@
 
 EventEmitter using [RxJS](https://github.com/Reactive-Extensions/RxJS).
 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+
+[npm-url]: https://www.npmjs.com/package/eventemitter-rx
+[npm-image]: https://badge.fury.io/js/eventemitter-rx.svg
+[travis-url]: https://travis-ci.org/stylelab-io/event-emitter-rx
+[travis-image]: https://travis-ci.org/stylelab-io/event-emitter-rx.svg?branch=master
+
 ## Install
 
 ### Source by npm
