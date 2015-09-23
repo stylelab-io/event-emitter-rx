@@ -6,10 +6,11 @@
   "scripts": {
     "start": "npm run build",
     "build": "npm run ts",
+    "tsd": "./node_modules/.bin/tsd install",
     "ts": "./node_modules/.bin/tsc --t ES5 --m commonjs --removeComments EventEmitterRx.ts",
     "tsTest": "./node_modules/.bin/tsc --t ES5 --m commonjs EventEmitterRx.spec.ts",
     "mocha": "./node_modules/.bin/mocha EventEmitterRx.spec.js",
-    "test": "npm run ts && npm run tsTest && npm run mocha"
+    "test": "npm run tsd && npm run ts && npm run tsTest && npm run mocha"
   },
   "repository": {
     "type": "git",
